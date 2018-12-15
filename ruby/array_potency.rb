@@ -1,4 +1,11 @@
 # frozen_string_literal: true
 
-arr = [1, 6, 7, 8, 10]
-arr.map { |e| e ** 2 }
+# Test case
+arr = Array.new(10) { |e| e = rand(1..10) }
+
+# Export as instance method
+class Array
+  def to_potency
+    self.map { |e| [e, e ** 2] }.to_h
+  end
+end
